@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(41, 78, 78);
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.description {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.description .titre {
+    font-size: 40px;
+    margin-bottom: 5em;
+}
+
+.description .presentation {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 4em;
+}
+
+.description .start {
+    border: none;
+    background-color: rgb(183, 94, 165);
+    padding: 1em;
+    border-radius: 15px;
+    font-size: larger;
+}
+
+.description .start:hover {
+    transition: all 1s;
+    padding-inline: 2em;
+    opacity: 90%;
+    background-color: rgb(187, 132, 176);
+    cursor: pointer;
+}

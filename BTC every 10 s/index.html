@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTC every 10s</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Cryptos every 10s</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 </head>
+
 <body>
     <!-- Créer un element qui sera utilisé par javascript pour créer un graph -->
-    <div><canvas id="myChart"></canvas></div>
-    <!-- import le ficheir css -->
-    <script type="module" src="js/scripts.js"></script>    
+    <div class="graph_wpr hidden">
+        <canvas id="myChart"></canvas>
+        <div class="data_panel">
+            <div>Moyenne :<span class="moyenne"></span></div>
+        </div>
+    </div>
+
+    <div class="description visible" id="landing" aria-label="description du site">
+        <div class="titre visible" id="landing">
+            <h1>CryptoToolz</h1>
+        </div>
+        <div class="presentation visible" id="landing">
+            <p>Bienvenue sur mon outil de visualisation des cours des cryptos ! <br>
+                Cet outil te permet de voir et de créer des graphs intéractifs qui s'actualise toutes les 10s.<br>
+                Tu pourras ajouter des cryptos, générer des statistiques et bien d'autres fonctionnalités :).</p>
+            <h2>Cliquez sur commencez quand tu es prêt</h2>
+        </div>
+        <div class="visible" id="landing"><button class="start">Commencez </button></div>
+    </div>
+    <!-- import le ficheir js -->
+    <script type="module" src="js/scripts.js" defer></script>
+
+
 </body>
+
 </html>

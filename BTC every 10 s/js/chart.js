@@ -25,7 +25,6 @@ export const data = {
 ]
 };
 
-// rgb(234, 221, 202)
 
 export const config = {
     type: 'line',
