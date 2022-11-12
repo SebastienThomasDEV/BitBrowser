@@ -39,18 +39,22 @@ function addchart(choice) {
 const start_btn = document.querySelector(".start");
 const landing = document.querySelectorAll("#landing");
 const graph = document.querySelector(".graph_wpr");
+const close_btn = document.querySelector(".close")
 
 start_btn.addEventListener('click', () => {
-    if (graph.classList.contains("visible") === true && landing[0].contains("hidden") === true) {
-        landing.forEach(element => {
-            element.classList.replace("hidden","visible")
-        });
-        graph.classList.replace("visible","hidden")
-    }
     landing.forEach(element => {
         element.classList.replace("visible","hidden")
     });
     graph.classList.replace("hidden","visible")
+    close_btn.classList.replace("hidden","visible")
+})
+
+close_btn.addEventListener('click', () => {
+    landing.forEach(element => {
+        element.classList.replace("hidden","visible")
+    });
+    graph.classList.replace("visible","hidden")
+    close_btn.classList.replace("hidden","visible")
 })
 
 let crypto = [];
