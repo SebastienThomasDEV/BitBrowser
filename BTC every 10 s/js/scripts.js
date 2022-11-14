@@ -37,35 +37,41 @@ function addchart(choice) {
 
 
 const start_btn = document.querySelector(".start");
-const landing = document.querySelectorAll("#landing");
-const graph = document.querySelector(".graph_wpr");
-const close_btn = document.querySelector(".close")
+const close_btn = document.querySelector(".close");
+$(".close").hide();
+$(".graph_wpr").hide();
+$(".add_crypto").hide();
+
+
+
 
 start_btn.addEventListener('click', () => {
-    landing.forEach(element => {
-        element.classList.replace("visible","hidden")
-    });
-    graph.classList.replace("hidden","visible")
-    close_btn.classList.replace("hidden","visible")
+    $(".close").show();
+    $(".start").hide()
+    $(".description").hide();
+    // $(".graph_wpr").show();
+    $(".add_crypto").show();
 })
 
 close_btn.addEventListener('click', () => {
-    landing.forEach(element => {
-        element.classList.replace("hidden","visible")
-    });
-    graph.classList.replace("visible","hidden")
-    close_btn.classList.replace("hidden","visible")
+    // $(".graph_wpr").hide();
+    $(".start").show()
+    $(".close").hide();
+    $(".add_crypto").hide();
+    $(".description").show();
+    
+
 })
 
 let crypto = [];
-let choice = 'bam';
+let choice = '';
 let url = `https://min-api.cryptocompare.com/data/price?fsym=${choice}&tsyms=EUR;`;
 
 
 
 
-// setInterval(() => {
-//     addData(myChart);}, 10000);
+setInterval(() => {
+    addData(myChart);}, 10000);
 
     
 

@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: rgb(41, 78, 78);
+    background-color: rgb(208, 216, 216);
 }
 
 .hidden {
@@ -38,7 +38,7 @@ body {
 
 .description .start {
     border: none;
-    background-color: rgb(183, 94, 165);
+    background-color: rgb(92, 144, 153);
     padding: 1em;
     border-radius: 15px;
     font-size: larger;
@@ -46,9 +46,9 @@ body {
 
 .description .start:hover {
     transition: all 1s;
-    padding-inline: 2em;
+    padding-right: 2em;
     opacity: 90%;
-    background-color: rgb(187, 132, 176);
+    background-color: rgb(92, 144, 153);
     cursor: pointer;
 }
 
@@ -59,4 +59,12 @@ body {
     border-radius: 15px;
     font-size: larger;
     cursor: pointer;
+}
+
+.crypto_wpr {
+    background-color: burlywood;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
 }
