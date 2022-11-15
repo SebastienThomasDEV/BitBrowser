@@ -10,13 +10,10 @@ async function addData(chart) {
     let new_data = await getData()
     for (let i = 0; i< new_data.length; i++) {
         let fresh = await new_data[i]
-        console.log(chart.data)
-        console.log(data.datasets)
-        console.log(data.datasets.data)
-        data.datasets.data.push(fresh["EUR"])
+        chart.data.datasets[i].data.push(fresh["EUR"])
     }
     let date = new Date;
-    data.labels.push(`${date.getHours()}h${date.getMinutes()}`)
+    chart.data.labels.push(`${date.getHours()}h${date.getMinutes()}`)
     chart.update();
 }
 
@@ -32,7 +29,7 @@ function build_graph(nb_graph) {
     const builded = new Chart(graph,config);
     $('.add_crypto').append(graph);
     setInterval(() => {
-        addData(build_graph);}, 10000);
+        addData(builded);}, 10000);
 }
   
 function config_graph(choice) {
