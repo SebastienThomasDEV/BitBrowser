@@ -5,16 +5,9 @@
 }
 
 body {
-    background-color: rgb(208, 216, 216);
+    background-color: rgb(140, 140, 140);
 }
 
-.hidden {
-    display: none;
-}
-
-.visible {
-    display: block;
-}
 
 .description {
     width: 100%;
@@ -52,19 +45,51 @@ body {
     cursor: pointer;
 }
 
+
 .close {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    position: fixed;
+    top: 10px;
+    right: 10px;
     border: none;
+    opacity: 70%;
+    color: beige;
     background-color: rgb(224, 24, 24);
     padding: 0.5em;
-    border-radius: 15px;
+    border-radius: 50%;
     font-size: larger;
     cursor: pointer;
 }
 
-.crypto_wpr {
-    background-color: burlywood;
+.add_crypto {
+    background-color: rgb(237, 237, 237);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 30vh;
+    flex-direction: column;
+    height: fit-content;
+    margin: 10px;
+    margin-top: 5vh;
+    margin-inline: 5vw;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.add_crypto .icon {
+    color: rgb(10, 157, 10);
+    font-size: 2vw;
+}
+
+.add_crypto .add_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add_crypto span {
+    font-size: 1.5vw;
+    font-weight: 500;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
