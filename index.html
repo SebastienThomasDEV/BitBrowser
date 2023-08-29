@@ -3,52 +3,88 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cryptos every 10s</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
-        integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous" defer></script>
-    <script type="module" src="js/scripts.js" defer></script>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="Content-Type" content="application/javascript; charset=UTF-8; text/html; x">
+    <link rel="icon" href="images/eye.svg">
+    <title>BitBrowser</title>
+    <script defer src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" type="module"></script>
+    <script defer nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </head>
 
-<body>
-    <!-- Créer un element qui sera utilisé par javascript pour créer un graph -->
-    <div>
-        <button class="close">
-            <ion-icon name="close-outline"></ion-icon>
-        </button>
-    </div>
-    <div class="graph_wpr">
-        <div class="data_panel">
-            <div>Moyenne : <span class="moyenne"></span></div>
+<body class="flex flex-col w-screen h-screen">
+    <header class="flex justify-between">
+        <a href="index.html" class="flex justify-center items-center px-6 cursor-pointer">
+            <div class="flex items-center justify-center bg-white p-2 rounded-lg gap-2">
+                <img class="h-10 w-10" src="images/eye.svg" alt="logo d'oeil">
+                <h1 class="text-2xl">BitBrowser</h1>
+            </div>
+        </a>
+        <div class="flex px-6 gap-16">
+            <ul class="flex gap-6 items-center justify-center">
+                <li>
+                    <a href="https://www.linkedin.com/in/s%C3%A9bastien-thomas-078319241/">
+                        <ion-icon class="text-3xl text-cyan-600" name="logo-linkedin"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/SebastienThomasDEV">
+                        <ion-icon class="text-3xl text-gray-700"  name="logo-github"></ion-icon>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </div>
-
-    <div class="description" id="landing" aria-label="description du site">
-        <div class="titre " id="landing">
-            <h1>CryptoTool</h1>
+    </header>
+    <main class="flex-1 bg-white lg:flex ">
+        <div class="p-8 flex flex-col gap-12 flex-1">
+            <h2 class="text-4xl border-b-4 border-gray-700 pb-2 w-fit" >En quoi consiste BitBrowser ?</h2>
+            <div class="text-xl">
+                <p>
+                    BitBrowser est une application web  qui vous permet de suivre en temps réel l'évolution des <span class="text-cyan-600"><a
+                        href="https://fr.wikipedia.org/wiki/Cryptomonnaie" class="cursor-help">cryptomonnaies</a></span>.
+                </p>
+                <div class="pt-6">
+                    <div class="flex items-center p-2 gap-4">
+                        <ion-icon class="text-3xl" name="stats-chart-outline"></ion-icon>
+                        <p>
+                            Explorez les montagnes russes des prix, les volumes et les fluctuations du marché.
+                        </p>
+                    </div>
+                    <div class="flex items-center p-2 gap-4">
+                        <ion-icon class="text-3xl" name="analytics-outline"></ion-icon>
+                        <p>
+                            Anticipez les évolutions futures grâce à nos outils de génération de graphiques avancés.
+                        </p>
+                    </div>
+                    <div class="flex items-center p-2 gap-4">
+                        <ion-icon class="text-3xl" name="wallet-outline"></ion-icon>
+                        <p>
+                            Prenez le contrôle de votre portefeuille avec une compréhension approfondie du marché.
+                        </p>
+                    </div>
+                </div>
+                <div class="pt-6">
+                    <p>
+                        Cette application est en cours de développement,
+                    </p>
+                    <p>
+                        n'hésitez pas à me faire part de vos idées !
+                    </p>
+                </div>
+                <div class="flex text-white pt-10">
+                    <a href="pages/dashboard.html" class="bg-cyan-600 px-6 p-3 font-semibold rounded-xl hover:opacity-90">Testez l'application</a>
+                </div>
+            </div>
         </div>
-        <div class="presentation" id="landing">
-            <p>Bienvenue sur mon outil de visualisation des cours des cryptos ! <br>
-                Cet outil te permet de voir et de créer des graphs intéractifs qui s'actualise toutes les 10s.<br>
-                Tu pourras ajouter des cryptos, générer des statistiques et bien d'autres fonctionnalités :).</p>
-            <h2>Cliquez sur commencez quand tu es prêt</h2>
+        <div class="flex-1 p-12">
+            <img src="images/home.svg" alt="homepage image">
         </div>
-        <div id="landing"><button class="start">Commencez</button></div>
-    </div>
-    <div class="add_crypto">
-        <div class="add_btn">
-            <ion-icon class="icon" name="add-circle-outline"></ion-icon>
-            <span>Ajouter une crypto</span>
-        </div>
-    </div>
-
-
-
+    </main>
+    <footer class="flex justify-center items-center bg-gray-600 text-white gap-2">
+        <p>BitBrowser - 2023</p>
+    </footer>
 </body>
 
 </html>
