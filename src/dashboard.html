@@ -7,6 +7,8 @@
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <link href="assets/images/eye.svg" rel="icon">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="main.ts" type="module"></script>
     <title>BitBrowser</title>
 </head>
@@ -23,7 +25,7 @@
         </div>
     </nav>
     <div class="flex-1 flex">
-        <aside class="w-1/5 h-full shadow-xl border border-r">
+        <aside class="w-2/5 h-full shadow-xl border border-r">
             <div class="h-16 flex items-center">
                 <a class="w-48 mx-auto bg-teal-600 hover:bg-teal-700 flex items-center justify-center text-gray-100 py-2 rounded space-x-2 transition duration-150"
                    href="#">
@@ -33,26 +35,17 @@
             <div class="px-2 pt-4 pb-8 ">
                 <ul class="space-y-2">
                     <li>
-                        <a class="hover:bg-gray-500 hover:bg-opacity-10 hover:text-teal-600 flex items-center text-gray-700 py-1.5 px-4 rounded space-x-2 cursor-pointer">
-                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      stroke-width="2"></path>
-                            </svg>
-                            <span>Important</span>
+                        <a href="#home" class="hover:bg-gray-500 hover:bg-opacity-10 hover:text-teal-600 flex items-center justify-between text-gray-700 py-1.5 px-4 rounded space-x-2 cursor-pointer">
+                            <span class="flex items-center space-x-2">
+                                <ion-icon name="home-outline"></ion-icon>
+                                <span>Acceuil</span>
+                            </span>
                         </a>
                     </li>
                     <li>
-                        <a class="hover:bg-gray-500 hover:bg-opacity-10 hover:text-teal-600 flex items-center justify-between text-gray-700 py-1.5 px-4 rounded space-x-2 cursor-pointer">
+                        <a href="#studies" class="hover:bg-gray-500 hover:bg-opacity-10 hover:text-teal-600 flex items-center justify-between text-gray-700 py-1.5 px-4 rounded space-x-2 cursor-pointer">
                             <span class="flex items-center space-x-2">
-                                <svg class="h-5 w-5" fill="none" stroke="currentColor"
-                                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                                          stroke-linecap="round"
-                                          stroke-linejoin="round"
-                                          stroke-width="2"></path>
-                                </svg>
+                                <ion-icon name="folder-outline"></ion-icon>
                                 <span>Mes études</span>
                             </span>
                         </a>
@@ -60,7 +53,7 @@
                 </ul>
             </div>
         </aside>
-        <section class="p-6 h-full w-full" id="content">
+        <section class="p-6 h-full w-full" id="panel">
 
         </section>
     </div>

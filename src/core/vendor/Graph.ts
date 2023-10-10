@@ -10,8 +10,6 @@ export class Graph {
     }
 
     init() {
-        this.element = document.createElement('canvas');
-        this.element.classList.add('graph');
-
+        console.log("Graph Init")
     }
 }
