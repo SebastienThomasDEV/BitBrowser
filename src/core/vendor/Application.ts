@@ -1,6 +1,8 @@
 import {Api} from "./Api";
 import {Auth} from "./Auth";
 import {User} from "./User";
+import Chart from "chart.js/auto";
+import {LINE_CHART} from "../chart/line_chart";
 
 
 export default class Application {
@@ -15,25 +17,22 @@ export default class Application {
 
 
     init() {
-        if (localStorage.getItem('view')) {
-            this.view = localStorage.getItem('view') as string;
-        } else {
-            window.location.hash = 'home';
-            this.view = window.location.hash.replace('#', '')
-        }
+        this.auth.login(new User('John Doe', 'johndoe@email.com', 'root', 'root'));
+        this.guard();
         this.dispatch(this.view);
-        window.addEventListener('hashchange', (e) => {
+        onhashchange = () => {
+            this.guard();
             this.view = window.location.hash.replace('#', '');
             localStorage.setItem('view', this.view);
             this.dispatch(this.view);
-        });
-        this.auth.login(new User('John Doe', 'johndoe@email.com', 'root', 'root'));
-        return this;
+        }
     }
 
     wrap(html: string) {
         const panel = document.getElementById('panel');
         panel.innerHTML = html;
+        const ctx = document.getElementById('myChart') as HTMLCanvasElement;
+        const myChart = new Chart(ctx, LINE_CHART);
     }
 
     async dispatch(pathname: string) {
@@ -42,8 +41,18 @@ export default class Application {
             .then(data => {this.wrap(data)})
     }
 
-    persist() {
-
+    guard() {
+        if (localStorage.getItem('isLogged') === 'true') {
+            if (localStorage.getItem('view')) {
+                this.view = localStorage.getItem('view') as string;
+            } else {
+                window.location.hash = 'home';
+                this.view = window.location.hash.replace('#', '')
+            }
+        } else {
+            window.location.hash = 'login';
+            this.view = window.location.hash.replace('#', '')
+        }
     }
 
 
