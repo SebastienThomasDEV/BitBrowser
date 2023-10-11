@@ -28,17 +28,29 @@ export default class Application {
         }
     }
 
-    wrap(html: string) {
+    async wrap(html: string) {
         const panel = document.getElementById('panel');
         panel.innerHTML = html;
-        const ctx = document.getElementById('myChart') as HTMLCanvasElement;
-        const myChart = new Chart(ctx, LINE_CHART);
+        await this.importModule(this.view);
+    }
+
+    async importModule(pathname: string) {
+        // @ts-ignore
+        return await import(`../../templates/${pathname}/${pathname}.module.ts`).then(
+            module => {
+                const controller = new module[pathname.charAt(0).toUpperCase() + pathname.slice(1) + 'Module']();
+                console.log(controller);
+            }
+        ) as Promise<void>;
     }
 
     async dispatch(pathname: string) {
+        console.log(pathname);
         return await fetch(`./templates/${pathname}/${pathname}.html`)
             .then(response => response.text())
-            .then(data => {this.wrap(data)})
+            .then(data => {
+                this.wrap(data);
+            })
     }
 
     guard() {
