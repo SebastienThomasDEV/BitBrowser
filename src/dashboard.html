@@ -13,25 +13,8 @@
     <title>BitBrowser</title>
 </head>
 <body>
-<main class="h-screen flex flex-col" id="app">
-    <nav class="h-16 w-full shadow border border-b flex justify-between px-6" >
-        <div class="flex items-center gap-4">
-            <img src="assets/images/eye.svg" class="h-8" alt="logo du site">
-            <span>BitBrowser</span>
-        </div>
-        <div class="flex items-center gap-4">
-            <h2>John Doe</h2>
-            <div class="h-8 w-8 bg-gray-600 shadow-sm rounded-full"></div>
-        </div>
-    </nav>
-    <div class="flex-1 flex">
-        <aside class="w-2/5 h-full shadow-xl border border-r">
-            <div class="h-16 flex items-center">
-                <a class="w-48 mx-auto bg-teal-600 hover:bg-teal-700 flex items-center justify-center text-gray-100 py-2 rounded space-x-2 transition duration-150"
-                   href="#">
-                    <span>Nouvelle analyse</span>
-                </a>
-            </div>
+<main class="h-screen flex flex-col w-screen justify-between" id="app">
+        <aside class="w-48 h-full shadow-xl border border-r fixed">
             <div class="px-2 pt-4 pb-8 ">
                 <ul class="space-y-2">
                     <li>
@@ -50,13 +33,20 @@
                             </span>
                         </a>
                     </li>
+                    <li>
+                        <a href="#feed" class="hover:bg-gray-500 hover:bg-opacity-10 hover:text-teal-600 flex items-center justify-between text-gray-700 py-1.5 px-4 rounded space-x-2 cursor-pointer">
+                            <span class="flex items-center space-x-2">
+                                <ion-icon name="folder-outline"></ion-icon>
+                                <span>Fil d'actualité</span>
+                            </span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </aside>
-        <section class="p-6 w-full overflow-y-auto" id="panel">
+        <section class="p-6 pl-52 w-full overflow-y-scroll flex" id="panel">
 
         </section>
-    </div>
 </main>
 </body>
 </html>

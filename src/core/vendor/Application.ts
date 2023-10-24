@@ -28,6 +28,7 @@ export default class Application {
         }
     }
 
+    // @ts-ignore
     async wrap(html: string) {
         const panel = document.getElementById('panel');
         panel.innerHTML = html;
@@ -39,13 +40,11 @@ export default class Application {
         return await import(`../../templates/${pathname}/${pathname}.module.ts`).then(
             module => {
                 const controller = new module[pathname.charAt(0).toUpperCase() + pathname.slice(1) + 'Module']();
-                console.log(controller);
             }
         ) as Promise<void>;
     }
 
     async dispatch(pathname: string) {
-        console.log(pathname);
         return await fetch(`./templates/${pathname}/${pathname}.html`)
             .then(response => response.text())
             .then(data => {

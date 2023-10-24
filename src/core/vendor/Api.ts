@@ -12,7 +12,7 @@ export class Api {
             .catch(error => console.log(error));
     }
 
-    static async feed() {
+    static async getFeed() {
         return fetch(`${this.BASE_FEED_URL}`)
             .then(response => response.json())
             .then(data => data.Data)
