@@ -1,26 +1,25 @@
 import Chart from "chart.js/auto";
 import {Api} from "../../core/vendor/Api";
-import ComponentManager from "../../core/vendor/ComponentManager";
 import {AbstractModule} from "../../core/vendor/AbtractModule";
-export class FeedModule extends AbstractModule{
+import HtmlParser from "../../core/vendor/HtmlParser";
+
+export class FeedModule extends AbstractModule {
     context: string = 'feed';
+
     constructor() {
         super();
         this.init();
     }
 
     init() {
-        console.log('Feed module initialized')
-        ComponentManager.loadComponent(this.context, 'card').then(html => {
-            Api.getFeed().then(data => {
-                console.log(data);
-                data.forEach(item => {
-                    let container = document.getElementById('container') as HTMLElement;
-                    ComponentManager.bind(item, html).then(result => {
-                        container.insertAdjacentHTML('beforeend', result);
-                    })
-                })
-            })
+        Api.getFeed(20).then(data => {
+            console.log(data);
+        })
+        console.log(document.body.innerHTML);
+        HtmlParser.seek(document.body.innerHTML).then(element => {
+            console.log(element);
         })
     }
+
+
 }

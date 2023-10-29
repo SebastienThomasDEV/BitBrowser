@@ -3,6 +3,8 @@ import {Auth} from "./Auth";
 import {User} from "./User";
 import Chart from "chart.js/auto";
 import {LINE_CHART} from "../chart/line_chart";
+import HtmlParser from "./HtmlParser";
+import {AbstractModule} from "./AbtractModule";
 
 
 export default class Application {
@@ -31,17 +33,18 @@ export default class Application {
     // @ts-ignore
     async wrap(html: string) {
         const panel = document.getElementById('panel');
-        panel.innerHTML = html;
-        await this.importModule(this.view);
+        await this.importModule(this.view).then(module => {
+            panel.innerHTML = html;
+        })
     }
 
-    async importModule(pathname: string) {
+    async importModule(pathname: string)  {
         // @ts-ignore
-        return await import(`../../templates/${pathname}/${pathname}.module.ts`).then(
-            module => {
-                const controller = new module[pathname.charAt(0).toUpperCase() + pathname.slice(1) + 'Module']();
+        return await import(`../../templates/${pathname}/${pathname}.module.ts`)
+            .then(module => {
+                return new module[pathname.charAt(0).toUpperCase() + pathname.slice(1) + 'Module']();
             }
-        ) as Promise<void>;
+        ) as Promise<AbstractModule>;
     }
 
     async dispatch(pathname: string) {

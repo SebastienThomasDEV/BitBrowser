@@ -1,5 +1,8 @@
 export class AbstractModule {
     panel: HTMLElement;
+    context: string = window.location.hash.replace('#', '');
+
+
     constructor() {
         this.getPanel();
     }
